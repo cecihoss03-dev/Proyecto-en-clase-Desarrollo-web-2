@@ -1,0 +1,62 @@
+@{
+    ViewData["Title"] = "Inicio - Sistema de Ventas";
+}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary">Sistema de Ventas</h1>
+        <p class="lead text-muted">Panel de control y gestión general del sistema</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        
+        <!-- Módulo de Productos -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100 text-center p-3">
+                <div class="card-body">
+                    <div class="mb-3 text-primary fs-1">
+                        <i class="bi bi-box-seam"></i>
+                    </div>
+                    <h3 class="card-title h4">Productos</h3>
+                    <p class="card-text text-muted">Gestiona el inventario, stock, precios y categorías de los artículos.</p>
+                    <a asp-controller="Productos" asp-action="Index" class="btn btn-outline-primary stretched-link mt-2">
+                        Ir a Productos
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Módulo de Clientes -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100 text-center p-3">
+                <div class="card-body">
+                    <div class="mb-3 text-success fs-1">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <h3 class="card-title h4">Clientes</h3>
+                    <p class="card-text text-muted">Administra el directorio de clientes, datos de contacto y registros.</p>
+                    <a asp-controller="Clientes" asp-action="Index" class="btn btn-outline-success stretched-link mt-2">
+                        Ir a Clientes
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Módulo de Ventas -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100 text-center p-3">
+                <div class="card-body">
+                    <div class="mb-3 text-warning fs-1">
+                        <i class="bi bi-cart-check"></i>
+                    </div>
+                    <h3 class="card-title h4">Ventas</h3>
+                    <p class="card-text text-muted">Registra nuevas ventas, revisa el historial y gestiona anulaciones con stock.</p>
+                    <a asp-controller="Ventas" asp-action="Index" class="btn btn-outline-warning stretched-link mt-2">
+                        Ir a Ventas
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

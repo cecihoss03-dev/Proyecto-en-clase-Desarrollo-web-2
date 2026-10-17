@@ -1,0 +1,10 @@
+@using SistemaVentas.Models
+@model Categoria
+@{
+       ViewData[index: "Title"]="Nueva Categoria";
+}
+
+<h2>Nueva Categoria</h2>
+<form asp-action="Create" method="post">
+       <partial name="_Form" model="Model"/>
+</form>

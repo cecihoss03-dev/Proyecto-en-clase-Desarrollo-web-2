@@ -1,0 +1,36 @@
+@using SistemaVentas.Models
+@model List<Categoria> 
+@{
+       ViewData[index: "Title"]="Categorias";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+       <h2>Categorias</h2>
+       <a class="btn btn-success" asp-action="Create">Nueva Categoria</a>
+
+</div>
+
+<table class="table table-striped">
+       <thead>
+              <tr>
+                     <th>Id</th>
+                     <th>Nombre</th>
+                     <th>Acciones</th>
+              </tr>
+       </thead>
+       <tbody>
+              @foreach(Categoria c in Model)
+              {
+                      <tr>
+                            <td>@c.Id</td>
+                            <td>@c.Nombre</td>
+                            <td class="text-end">
+                                   <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@c.Id">Editar</a>
+                                   <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@c.Id">Eliminar</a>
+
+                            </td>
+                     </tr>
+              }
+       </tbody>
+
+</table>

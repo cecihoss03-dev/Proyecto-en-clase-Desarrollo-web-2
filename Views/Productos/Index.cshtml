@@ -1,0 +1,45 @@
+@using SistemaVentas.Models
+@model List<Producto>
+@{
+    ViewData["Title"] = "Productos";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Productos</h2>
+    <a class="btn btn-success" asp-action="Create">Nuevo Producto</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Stock Mínimo</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Producto p in Model)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Nombre</td>
+                <td>Bs. @p.Precio?.ToString("0.00")</td>
+                <td>
+                    <span class="badge @(p.Stock <= p.StockMinimo ? "bg-danger" : "bg-primary")">
+                        @p.Stock
+                    </span>
+                </td>
+                <td>@p.StockMinimo</td>
+                <td>@(p.Categoria?.Nombre ?? "Sin categoría")</td>
+                <td class="text-end">
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@p.Id">Editar</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@p.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
