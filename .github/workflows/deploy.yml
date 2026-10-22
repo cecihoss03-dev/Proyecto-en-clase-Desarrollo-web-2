@@ -16,7 +16,7 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Publicar
-        run: dotnet publish Sistema_ventas.csproj -c Release -o publish
+        run: dotnet publish SistemaVentas.csproj -c Release -o publish
 
       - name: Subir por FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
