@@ -15,9 +15,14 @@ public class Venta
     {
         Total = Detalles.Sum(d => d.Subtotal);
     }
-    public void CalcularVambio()
+    public void CalcularCambio()
     {
         Cambio = Recibido - Total;
+    }
+    // (Opcional por si en algún lado usabas el otro nombre por error)
+    public void CalcularVambio()
+    {
+        CalcularCambio();
     }
     public void Actualizarstock()
     {
@@ -30,5 +35,3 @@ public class Venta
         }   
     }
 }
-
-

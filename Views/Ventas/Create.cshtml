@@ -1,30 +1,22 @@
-@using SistemaVentas.Models
-@model Producto
+@model SistemaVentas.Models.Venta
 @{
-    ViewData["Title"] = "Nuevo Producto";
+    ViewData["Title"] = "Registrar Venta";
 }
 
 <div class="container py-4">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card shadow-sm border-0">
-                <div class="card-body p-4">
-                    <h2 class="mb-4 text-primary">Nuevo Producto</h2>
-
-                    <form asp-action="Create" method="post">
-                        <partial name="_Form" model="Model" />
-
-                        <div class="d-flex justify-content-between mt-4">
-                            <a asp-action="Index" class="btn btn-outline-secondary">Volver a la lista</a>
-                            <button type="submit" class="btn btn-success">Guardar Producto</button>
-                        </div>
-                    </form>
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white py-3">
+            <h4 class="card-title mb-0">Registrar Nueva Venta</h4>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Create" method="post">
+                <partial name="_Form" model="Model" />
+                
+                <div class="d-flex justify-content-between mt-4 pt-3 border-top">
+                    <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary px-4">Procesar Venta</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

@@ -70,6 +70,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2xpZW50ZXMvX0Zvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGFzaGJvYXJkL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -102,8 +106,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/Views/Ventas/Cancel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVudGFzL0NhbmNlbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/Views/Ventas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVudGFzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/Views/Ventas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVudGFzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/Views/Ventas/Edit.cshtml]

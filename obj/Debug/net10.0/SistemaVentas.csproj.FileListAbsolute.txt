@@ -463,3 +463,5 @@
 /home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/obj/Debug/net10.0/scopedcss/projectbundle/SistemaVentas.bundle.scp.css
 /home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/obj/Debug/net10.0/compressed/106ysev53n-{0}-j8uv10ifw7-j8uv10ifw7.gz
 /home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/obj/Debug/net10.0/compressed/ywnpwgcmqo-{0}-j8uv10ifw7-j8uv10ifw7.gz
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/obj/Debug/net10.0/SistemaVentas.sourcelink.json
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/obj/Debug/net10.0/compressed/gul9e2v52g-{0}-lms1nkk5cg-lms1nkk5cg.gz
