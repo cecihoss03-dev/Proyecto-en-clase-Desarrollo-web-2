@@ -20,13 +20,14 @@ jobs:
       - name: Publicar proyecto
         run: dotnet publish SistemaVentas.csproj -c Release -o publish
 
-      - name: Subir por FTPS a MonsterASP
+      - name: Subir por FTP a MonsterASP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          protocol: ftp
+          port: 21
           local-dir: ./publish/
           server-dir: /
           state-name: .ftp-deploy-sync-state.json
