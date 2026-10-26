@@ -61,6 +61,10 @@
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[10.0.12, )"
+            },
+            "Turso.Data.Sqlite.Provider": {
+              "target": "Package",
+              "version": "[0.8.3, )"
             }
           },
           "imports": [

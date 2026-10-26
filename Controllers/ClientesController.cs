@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SistemaVentas.Data;
@@ -61,6 +62,7 @@ public class ClientesController : Controller
     }
 
     // GET: /Clientes/Delete/5
+    [Authorize(Roles = Roles.Administrador)]
     public async Task<IActionResult> Delete(int id)
     {
         var cliente = await _context.Clientes.FindAsync(id);
@@ -69,6 +71,7 @@ public class ClientesController : Controller
     }
 
     // POST: /Clientes/Delete/5
+    [Authorize(Roles = Roles.Administrador)]
     [HttpPost, ActionName("Delete")]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {

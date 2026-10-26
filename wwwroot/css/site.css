@@ -1,0 +1,459 @@
+/* ==========================================================================
+   SistemaVentas · estilo minimarket
+   Paleta: turquesa #86DBDE · rosa #DF6390 · rosa claro #E4BCC4 · chocolate #492716
+   Va encima de Bootswatch Pulse, por eso redefine las variables de Bootstrap.
+   Idea central: todo tiene trazo grueso color chocolate y sombra "dura",
+   como una etiqueta de precio o un sticker de tienda.
+   ========================================================================== */
+
+:root {
+  --turquesa: #86DBDE;
+  --rosa: #DF6390;
+  --rosa-claro: #E4BCC4;
+  --chocolate: #492716;
+
+  /* Derivados de la paleta */
+  --crema: color-mix(in srgb, var(--rosa-claro) 16%, white);
+  --fondo: color-mix(in srgb, var(--rosa-claro) 42%, white);
+  --turquesa-suave: color-mix(in srgb, var(--turquesa) 35%, white);
+  --rosa-suave: color-mix(in srgb, var(--rosa) 22%, white);
+  --rosa-oscuro: #AA4E65;
+
+  --trazo: 3px;
+  --radio: 18px;
+  --sombra: 5px 5px 0 var(--chocolate);
+
+  --fuente-titulos: "Fredoka", "Nunito", system-ui, sans-serif;
+  --fuente-texto: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Variables de Bootstrap */
+  --bs-body-font-family: var(--fuente-texto);
+  --bs-body-color: var(--chocolate);
+  --bs-body-color-rgb: 73, 39, 22;
+  --bs-body-bg: var(--fondo);
+  --bs-heading-color: var(--chocolate);
+  --bs-border-color: var(--chocolate);
+  --bs-border-radius: 14px;
+
+  --bs-primary: #DF6390;   --bs-primary-rgb: 223, 99, 144;
+  --bs-secondary: #E4BCC4; --bs-secondary-rgb: 228, 188, 196;
+  --bs-success: #86DBDE;   --bs-success-rgb: 134, 219, 222;
+  --bs-info: #C3EDEF;      --bs-info-rgb: 195, 237, 239;
+  --bs-warning: #E4BCC4;   --bs-warning-rgb: 228, 188, 196;
+  --bs-danger: #AA4E65;    --bs-danger-rgb: 170, 78, 101;
+  --bs-dark: #492716;      --bs-dark-rgb: 73, 39, 22;
+
+  --bs-secondary-color: #6f5546;   /* texto atenuado (text-muted) */
+  --bs-secondary-color-rgb: 111, 85, 70;
+  --bs-link-color: #492716;        --bs-link-color-rgb: 73, 39, 22;
+  --bs-link-hover-color: #9B4859;  --bs-link-hover-color-rgb: 155, 72, 89;
+}
+
+/* ---------- Base ---------- */
+body {
+  font-family: var(--fuente-texto);
+  font-weight: 600;
+  color: var(--chocolate);
+  background-color: var(--fondo);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
+  color: var(--chocolate);
+}
+
+a { text-decoration-color: var(--rosa); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--turquesa); }
+
+::selection { background: var(--turquesa); color: var(--chocolate); }
+
+:focus-visible { outline: 3px solid var(--rosa-oscuro); outline-offset: 2px; }
+
+/* ---------- Barra de navegación ---------- */
+.navbar-minimarket {
+  background: var(--turquesa);
+  border-bottom: var(--trazo) solid var(--chocolate);
+  padding-block: .6rem;
+}
+
+.brand-minimarket {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
+  font-size: 1.45rem;
+  color: var(--chocolate);
+  text-decoration: none;
+}
+.brand-minimarket:hover { color: var(--chocolate); }
+.brand-minimarket i {
+  display: inline-grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  font-size: 1.15rem;
+  background: var(--rosa);
+  border: var(--trazo) solid var(--chocolate);
+  border-radius: 12px;
+  box-shadow: 2px 2px 0 var(--chocolate);
+  transform: rotate(-6deg);
+}
+
+.navbar-minimarket .nav-link {
+  color: var(--chocolate);
+  font-weight: 800;
+  border-radius: 999px;
+  padding: .4rem 1rem;
+  margin-inline: .15rem;
+  transition: background-color .12s ease;
+}
+.navbar-minimarket .nav-link:hover,
+.navbar-minimarket .nav-link:focus-visible,
+.navbar-minimarket .nav-link.show {
+  color: var(--chocolate);
+  background: color-mix(in srgb, white 45%, transparent);
+}
+.navbar-minimarket .nav-link.active {
+  background: var(--rosa);
+  box-shadow: inset 0 0 0 var(--trazo) var(--chocolate);
+}
+.navbar-minimarket .navbar-toggler { border: var(--trazo) solid var(--chocolate); border-radius: 12px; }
+
+/* ---------- Menús desplegables ---------- */
+.dropdown-menu {
+  background: var(--crema);
+  border: var(--trazo) solid var(--chocolate) !important;
+  border-radius: 16px;
+  box-shadow: 4px 4px 0 var(--chocolate);
+  padding: .4rem;
+}
+.dropdown-item {
+  color: var(--chocolate);
+  font-weight: 700;
+  border-radius: 10px;
+}
+.dropdown-item:hover,
+.dropdown-item:focus { background: var(--turquesa); color: var(--chocolate); }
+.dropdown-divider { border-top-color: var(--rosa-claro); opacity: 1; }
+
+/* ---------- Botones ---------- */
+.btn {
+  --bs-btn-border-width: var(--trazo);
+  --bs-btn-border-radius: 999px;
+  --bs-btn-font-family: var(--fuente-titulos);
+  --bs-btn-font-weight: 500;
+  --bs-btn-padding-x: 1.2rem;
+  --bs-btn-padding-y: .45rem;
+  box-shadow: 3px 3px 0 var(--chocolate);
+  letter-spacing: .01em;
+  transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease;
+}
+.btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--chocolate); }
+.btn:active,
+.btn.active { transform: translate(3px, 3px) !important; box-shadow: 0 0 0 var(--chocolate) !important; }
+.btn:focus-visible { box-shadow: 3px 3px 0 var(--chocolate); outline: 3px solid var(--rosa-oscuro); outline-offset: 3px; }
+.btn:disabled,
+.btn.disabled { box-shadow: none; opacity: .55; }
+.btn-sm { --bs-btn-padding-x: .8rem; --bs-btn-padding-y: .22rem; --bs-btn-border-width: 2px; box-shadow: 2px 2px 0 var(--chocolate); }
+.btn-lg { --bs-btn-padding-x: 1.6rem; --bs-btn-padding-y: .6rem; font-size: 1.15rem; }
+
+/* Cada variante define su color de fondo (--b) y de texto (--t) */
+.btn-primary   { --b: var(--rosa);          --t: var(--chocolate); }
+.btn-secondary { --b: #ffffff;              --t: var(--chocolate); }
+.btn-success   { --b: var(--turquesa);      --t: var(--chocolate); }
+.btn-info      { --b: var(--turquesa-suave);--t: var(--chocolate); }
+.btn-warning   { --b: var(--rosa-claro);    --t: var(--chocolate); }
+.btn-danger    { --b: var(--rosa-oscuro);   --t: #ffffff; }
+.btn-light     { --b: var(--crema);         --t: var(--chocolate); }
+.btn-dark      { --b: var(--chocolate);     --t: var(--crema); }
+
+.btn-primary, .btn-secondary, .btn-success, .btn-info,
+.btn-warning, .btn-danger, .btn-light, .btn-dark {
+  --bs-btn-color: var(--t);
+  --bs-btn-bg: var(--b);
+  --bs-btn-border-color: var(--chocolate);
+  --bs-btn-hover-color: var(--t);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--b) 80%, white);
+  --bs-btn-hover-border-color: var(--chocolate);
+  --bs-btn-active-color: var(--t);
+  --bs-btn-active-bg: color-mix(in srgb, var(--b) 85%, var(--chocolate));
+  --bs-btn-active-border-color: var(--chocolate);
+  --bs-btn-disabled-color: var(--t);
+  --bs-btn-disabled-bg: var(--b);
+  --bs-btn-disabled-border-color: var(--chocolate);
+}
+
+.btn-outline-primary   { --b: var(--rosa);        --t: var(--chocolate); }
+.btn-outline-secondary { --b: var(--rosa-claro);  --t: var(--chocolate); }
+.btn-outline-success   { --b: var(--turquesa);    --t: var(--chocolate); }
+.btn-outline-info      { --b: var(--turquesa);    --t: var(--chocolate); }
+.btn-outline-warning   { --b: var(--rosa-claro);  --t: var(--chocolate); }
+.btn-outline-danger    { --b: var(--rosa-oscuro); --t: #ffffff; }
+.btn-outline-dark,
+.btn-outline-light     { --b: var(--turquesa);    --t: var(--chocolate); }
+
+.btn-outline-primary, .btn-outline-secondary, .btn-outline-success, .btn-outline-info,
+.btn-outline-warning, .btn-outline-danger, .btn-outline-dark, .btn-outline-light {
+  --bs-btn-color: var(--chocolate);
+  --bs-btn-bg: var(--crema);
+  --bs-btn-border-color: var(--chocolate);
+  --bs-btn-hover-color: var(--t);
+  --bs-btn-hover-bg: var(--b);
+  --bs-btn-hover-border-color: var(--chocolate);
+  --bs-btn-active-color: var(--t);
+  --bs-btn-active-bg: var(--b);
+  --bs-btn-active-border-color: var(--chocolate);
+  --bs-btn-disabled-color: var(--chocolate);
+  --bs-btn-disabled-bg: var(--crema);
+  --bs-btn-disabled-border-color: var(--chocolate);
+}
+
+/* ---------- Colores de texto legibles ----------
+   Los colores de la paleta (turquesa, rosa) son muy claros para usarlos como texto sobre fondo claro;
+   por eso text-success, text-primary, etc. usan versiones más oscuras. */
+.text-success, .text-info { color: #17595C !important; }
+.text-primary             { color: #B03A68 !important; }
+.text-warning             { color: #8F3F55 !important; }
+.text-danger              { color: #8F3F55 !important; }
+
+/* ---------- Tarjetas ---------- */
+.card {
+  --bs-card-bg: var(--crema);
+  --bs-card-border-radius: var(--radio);
+  --bs-card-inner-border-radius: calc(var(--radio) - var(--trazo));
+  --bs-card-cap-bg: var(--turquesa);
+  color: var(--chocolate);
+  border: var(--trazo) solid var(--chocolate) !important;
+  box-shadow: var(--sombra) !important;
+}
+.card-header {
+  font-family: var(--fuente-titulos);
+  font-weight: 500;
+  color: var(--chocolate);
+  background: var(--turquesa);
+  border-bottom: var(--trazo) solid var(--chocolate);
+}
+.card-footer { background: var(--rosa-suave); border-top: var(--trazo) solid var(--chocolate); }
+
+/* En tarjetas de color (bg-primary, bg-success...) el texto va en chocolate para que se lea */
+.card[class*="bg-"],
+.card[class*="text-bg-"] { color: var(--chocolate) !important; }
+.card.bg-danger,
+.card.text-bg-danger { color: #ffffff !important; }
+
+/* ---------- Tablas ---------- */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--chocolate);
+  --bs-table-border-color: color-mix(in srgb, var(--rosa-claro) 70%, white);
+  --bs-table-striped-bg: color-mix(in srgb, var(--rosa-claro) 30%, transparent);
+  --bs-table-striped-color: var(--chocolate);
+  --bs-table-hover-bg: color-mix(in srgb, var(--turquesa) 30%, transparent);
+  --bs-table-hover-color: var(--chocolate);
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--crema);
+  border: var(--trazo) solid var(--chocolate);
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+.table > thead > tr > * {
+  background: var(--turquesa);
+  color: var(--chocolate);
+  font-family: var(--fuente-titulos);
+  font-weight: 500;
+  border-bottom: var(--trazo) solid var(--chocolate);
+  padding-block: .8rem;
+}
+.table > tbody > tr > * { vertical-align: middle; }
+.card .table { border: 0; border-radius: 0; margin-bottom: 0; }
+
+/* ---------- Formularios ---------- */
+.form-label { font-family: var(--fuente-titulos); font-weight: 500; }
+.form-control,
+.form-select {
+  color: var(--chocolate);
+  font-weight: 600;
+  background-color: #ffffff;
+  border: var(--trazo) solid var(--chocolate);
+  border-radius: 14px;
+  padding: .55rem .9rem;
+}
+.form-control::placeholder { color: color-mix(in srgb, var(--chocolate) 45%, white); font-weight: 400; }
+.form-control:focus,
+.form-select:focus {
+  color: var(--chocolate);
+  background-color: #ffffff;
+  border-color: var(--chocolate);
+  box-shadow: 0 0 0 .25rem color-mix(in srgb, var(--turquesa) 75%, transparent);
+}
+.form-control:disabled,
+.form-control[readonly] { background-color: var(--rosa-suave); }
+.form-check-input { border: 2px solid var(--chocolate); }
+.form-check-input:checked { background-color: var(--rosa); border-color: var(--chocolate); }
+.form-check-input:focus { border-color: var(--chocolate); box-shadow: 0 0 0 .25rem color-mix(in srgb, var(--turquesa) 75%, transparent); }
+.input-group-text {
+  color: var(--chocolate);
+  font-weight: 700;
+  background: var(--turquesa);
+  border: var(--trazo) solid var(--chocolate);
+}
+
+/* ---------- Alertas e insignias ---------- */
+.alert {
+  --bs-alert-color: var(--chocolate);
+  --bs-alert-border-color: var(--chocolate);
+  --bs-alert-border-width: var(--trazo);
+  --bs-alert-border-radius: 16px;
+  font-weight: 700;
+  box-shadow: 3px 3px 0 var(--chocolate);
+}
+.alert-success,
+.alert-info    { --bs-alert-bg: var(--turquesa-suave); }
+.alert-warning { --bs-alert-bg: color-mix(in srgb, var(--rosa-claro) 70%, white); }
+.alert-danger  { --bs-alert-bg: var(--rosa-suave); }
+.alert-link    { color: var(--chocolate); }
+
+.badge {
+  --bs-badge-color: var(--chocolate);
+  --bs-badge-font-weight: 500;
+  font-family: var(--fuente-titulos);
+  padding: .4em .8em;
+  border: 2px solid var(--chocolate);
+  border-radius: 999px;
+}
+[class*="text-bg-"] { color: var(--chocolate) !important; }
+.badge.bg-danger,
+.badge.text-bg-danger { color: #ffffff !important; }
+
+/* ---------- Otros componentes ---------- */
+.list-group-item { background: var(--crema); color: var(--chocolate); border-color: var(--rosa-claro); }
+.modal-content {
+  background: var(--crema);
+  border: var(--trazo) solid var(--chocolate);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+.modal-header { background: var(--turquesa); border-bottom: var(--trazo) solid var(--chocolate); }
+.page-link { color: var(--chocolate); border: 2px solid var(--chocolate); }
+.page-item.active .page-link { background: var(--rosa); border-color: var(--chocolate); color: var(--chocolate); }
+
+/* ---------- Pie de página ---------- */
+.footer-minimarket {
+  margin-top: 3rem;
+  padding: 1rem 0;
+  background: var(--crema);
+  border-top: var(--trazo) solid var(--chocolate);
+  color: var(--chocolate);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Login: un toldo de tienda sobre una tarjeta
+   ========================================================================== */
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background-color: var(--turquesa);
+  background-image: radial-gradient(circle, color-mix(in srgb, white 45%, transparent) 3px, transparent 3.5px);
+  background-size: 30px 30px;
+}
+
+.login-wrap {
+  width: min(100%, 24rem);
+  filter: drop-shadow(8px 8px 0 var(--chocolate));
+}
+
+/* Toldo: 8 franjas rosa/crema que siempre caben justas, sin importar el ancho */
+.toldo {
+  position: relative;
+  height: 3.25rem;
+  border: var(--trazo) solid var(--chocolate);
+  border-bottom: 0;
+  border-radius: 20px 20px 0 0;
+  filter: drop-shadow(0 var(--trazo) 0 var(--chocolate));
+}
+.toldo,
+.toldo::after {
+  background-image: linear-gradient(90deg, var(--rosa) 50%, var(--crema) 50%);
+  background-size: 25% 100%;
+  background-repeat: repeat-x;
+  background-origin: border-box;
+}
+/* Los "dientes" redondeados del borde inferior del toldo */
+.toldo::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: calc(var(--trazo) * -1);
+  right: calc(var(--trazo) * -1);
+  height: 1.25rem;
+  -webkit-mask: radial-gradient(ellipse 50% 100% at 50% 0, #000 96%, transparent 100%) 0 0 / 12.5% 100% repeat-x;
+          mask: radial-gradient(ellipse 50% 100% at 50% 0, #000 96%, transparent 100%) 0 0 / 12.5% 100% repeat-x;
+}
+
+.login-card {
+  background: var(--crema);
+  border: var(--trazo) solid var(--chocolate);
+  border-top: 0;
+  border-radius: 0 0 22px 22px;
+  padding: 2.75rem 1.75rem 1.75rem;
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .25rem;
+}
+.login-brand i {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  font-size: 1.4rem;
+  background: var(--turquesa);
+  border: var(--trazo) solid var(--chocolate);
+  border-radius: 14px;
+  box-shadow: 2px 2px 0 var(--chocolate);
+  transform: rotate(-6deg);
+}
+.login-brand h1 { margin: 0; font-size: 1.9rem; }
+.login-sub { margin-bottom: 1.5rem; }
+
+.campo-password { position: relative; }
+.campo-password .form-control { padding-right: 3.2rem; }
+.ver-password {
+  position: absolute;
+  top: 50%;
+  right: .45rem;
+  transform: translateY(-50%);
+  padding: .35rem .6rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--chocolate);
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+}
+.ver-password:hover { background: var(--turquesa-suave); }
+
+/* ---------- Movimiento reducido y móviles ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .navbar-minimarket .nav-link { transition: none; }
+  .btn:hover { transform: none; }
+}
+
+@media (max-width: 575.98px) {
+  .card { box-shadow: 3px 3px 0 var(--chocolate) !important; }
+  .login-card { padding-inline: 1.25rem; }
+  .login-brand h1 { font-size: 1.6rem; }
+}

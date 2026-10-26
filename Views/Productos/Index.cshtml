@@ -2,11 +2,15 @@
 @model List<Producto>
 @{
     ViewData["Title"] = "Productos";
+    var esAdmin = User.IsInRole("Administrador");
 }
 
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h2>Productos</h2>
-    <a class="btn btn-success" asp-action="Create">Nuevo Producto</a>
+    @if (esAdmin)
+    {
+        <a class="btn btn-success" asp-action="Create">Nuevo Producto</a>
+    }
 </div>
 
 <table class="table table-striped">
@@ -18,7 +22,10 @@
             <th>Stock</th>
             <th>Stock Mínimo</th>
             <th>Categoría</th>
-            <th>Acciones</th>
+            @if (esAdmin)
+            {
+                <th>Acciones</th>
+            }
         </tr>
     </thead>
     <tbody>
@@ -35,10 +42,13 @@
                 </td>
                 <td>@p.StockMinimo</td>
                 <td>@(p.Categoria?.Nombre ?? "Sin categoría")</td>
-                <td class="text-end">
-                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@p.Id">Editar</a>
-                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@p.Id">Eliminar</a>
-                </td>
+                @if (esAdmin)
+                {
+                    <td class="text-end">
+                        <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@p.Id">Editar</a>
+                        <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@p.Id">Eliminar</a>
+                    </td>
+                }
             </tr>
         }
     </tbody>

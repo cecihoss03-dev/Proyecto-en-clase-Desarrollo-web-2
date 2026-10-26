@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bu7lN4ew20E=",
+  "dgSpecHash": "KkiIZSnHkSc=",
   "success": true,
   "projectFilePath": "/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/SistemaVentas.csproj",
   "expectedPackageFiles": [
@@ -49,7 +49,10 @@
     "/home/omen/.nuget/packages/system.composition.convention/9.0.0/system.composition.convention.9.0.0.nupkg.sha512",
     "/home/omen/.nuget/packages/system.composition.hosting/9.0.0/system.composition.hosting.9.0.0.nupkg.sha512",
     "/home/omen/.nuget/packages/system.composition.runtime/9.0.0/system.composition.runtime.9.0.0.nupkg.sha512",
-    "/home/omen/.nuget/packages/system.composition.typedparts/9.0.0/system.composition.typedparts.9.0.0.nupkg.sha512"
+    "/home/omen/.nuget/packages/system.composition.typedparts/9.0.0/system.composition.typedparts.9.0.0.nupkg.sha512",
+    "/home/omen/.nuget/packages/turso.data.common/0.8.3/turso.data.common.0.8.3.nupkg.sha512",
+    "/home/omen/.nuget/packages/turso.data.native/0.8.3/turso.data.native.0.8.3.nupkg.sha512",
+    "/home/omen/.nuget/packages/turso.data.sqlite.provider/0.8.3/turso.data.sqlite.provider.0.8.3.nupkg.sha512"
   ],
   "logs": [
     {

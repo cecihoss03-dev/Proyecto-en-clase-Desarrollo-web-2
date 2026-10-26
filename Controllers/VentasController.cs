@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -124,6 +125,7 @@ public class VentasController : Controller
     }
 
     // GET: /Ventas/Cancel/5
+    [Authorize(Roles = Roles.Administrador)]
     public async Task<IActionResult> Cancel(int id)
     {
         var venta = await _context.Ventas
@@ -138,6 +140,7 @@ public class VentasController : Controller
     }
 
     // POST: /Ventas/Cancel/5
+    [Authorize(Roles = Roles.Administrador)]
     [HttpPost, ActionName("Cancel")]
     public async Task<IActionResult> CancelConfirmed(int id)
     {

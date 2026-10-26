@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +28,7 @@ public class ProductosController : Controller
     }
 
     // GET: /Productos/Create
+    [Authorize(Roles = Roles.Administrador)]
     public async Task<IActionResult> Create()
     {
         ViewData["CategoriaId"] = new SelectList(await _context.Categorias.OrderBy(c => c.Nombre).ToListAsync(), "Id", "Nombre");
@@ -34,6 +36,7 @@ public class ProductosController : Controller
     }
 
     // POST: /Productos/Create
+    [Authorize(Roles = Roles.Administrador)]
     [HttpPost]
     public async Task<IActionResult> Create(Producto producto)
     {
@@ -49,6 +52,7 @@ public class ProductosController : Controller
     }
 
     // GET: /Productos/Edit/5
+    [Authorize(Roles = Roles.Administrador)]
     public async Task<IActionResult> Edit(int id)
     {
         var producto = await _context.Producto.FindAsync(id);
@@ -59,6 +63,7 @@ public class ProductosController : Controller
     }
 
     // POST: /Productos/Edit/5
+    [Authorize(Roles = Roles.Administrador)]
     [HttpPost]
     public async Task<IActionResult> Edit(int id, Producto producto)
     {
@@ -76,6 +81,7 @@ public class ProductosController : Controller
     }
 
     // GET: /Productos/Delete/5
+    [Authorize(Roles = Roles.Administrador)]
     public async Task<IActionResult> Delete(int id)
     {
         var producto = await _context.Producto
@@ -87,6 +93,7 @@ public class ProductosController : Controller
     }
 
     // POST: /Productos/Delete/5
+    [Authorize(Roles = Roles.Administrador)]
     [HttpPost, ActionName("Delete")]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {

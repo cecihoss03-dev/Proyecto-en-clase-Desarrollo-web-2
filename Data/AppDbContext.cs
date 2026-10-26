@@ -1,4 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
 using Microsoft.EntityFrameworkCore;
 using SistemaVentas.Models;
 
@@ -13,10 +12,17 @@ public class AppDbContext : DbContext
     public DbSet<DetalleVenta> DetalleVentas => Set<DetalleVenta>();
     public DbSet<Producto> Producto => Set<Producto>();
     public DbSet<Venta> Ventas => Set<Venta>();
+    public DbSet<Usuario> Usuarios => Set<Usuario>();
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<Usuario>(e =>
+        {
+            e.Property(u => u.NombreUsuario).HasMaxLength(50).IsRequired();
+            e.HasIndex(u => u.NombreUsuario).IsUnique();
+        });
         
         modelBuilder.Entity<Categoria>().HasData(
             new Categoria { Id = 1, Nombre = "Limpieza" },

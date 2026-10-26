@@ -465,3 +465,15 @@
 /home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/obj/Release/net10.0/SistemaVentas.pdb
 /home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/obj/Release/net10.0/SistemaVentas.genruntimeconfig.cache
 /home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/obj/Release/net10.0/ref/SistemaVentas.dll
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/bin/Release/net10.0/publish/web.config
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/bin/Release/net10.0/publish/appsettings.Development.json
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/bin/Release/net10.0/publish/appsettings.json
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/bin/Release/net10.0/publish/SistemaVentas.deps.json
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/bin/Release/net10.0/publish/SistemaVentas.runtimeconfig.json
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/bin/Release/net10.0/publish/SistemaVentas.staticwebassets.endpoints.json
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/bin/Release/net10.0/publish/publish/web.config
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/bin/Release/net10.0/publish/publish/appsettings.Development.json
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/bin/Release/net10.0/publish/publish/appsettings.json
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/bin/Release/net10.0/publish/publish/SistemaVentas.deps.json
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/bin/Release/net10.0/publish/publish/SistemaVentas.runtimeconfig.json
+/home/omen/upds/Programacion web 2/SistemaVentas/SistemaVentas/bin/Release/net10.0/publish/publish/SistemaVentas.staticwebassets.endpoints.json

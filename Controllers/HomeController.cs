@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace SistemaVentas.Controllers;
@@ -9,6 +10,7 @@ public class HomeController : Controller
         return View();
     }
 
+    [AllowAnonymous]
     public IActionResult Error()
     {
         return Content("Ocurrió un error. Intenta nuevamente.");

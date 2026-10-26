@@ -1,6 +1,7 @@
 @model IEnumerable<SistemaVentas.Models.Venta>
 @{
     ViewData["Title"] = "Listado de Ventas";
+    var esAdmin = User.IsInRole("Administrador");
 }
 
 <div class="container py-4">
@@ -35,7 +36,10 @@
                             <td class="text-end fw-bold text-success">Bs. @item.Total.ToString("0.00")</td>
                             <td class="text-end">
                                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info me-1">Detalles</a>
-                                <a asp-action="Cancel" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Anular</a>
+                                @if (esAdmin)
+                                {
+                                    <a asp-action="Cancel" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Anular</a>
+                                }
                             </td>
                         </tr>
                     }

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SistemaVentas.Data;
@@ -5,6 +6,8 @@ using SistemaVentas.Models;
 
 namespace SistemaVentas.Controllers;
 
+// Solo administradores
+[Authorize(Roles = Roles.Administrador)]
 public class CategoriasController : Controller
 {
     private readonly AppDbContext _context;

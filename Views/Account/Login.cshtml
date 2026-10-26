@@ -1,0 +1,78 @@
+@model SistemaVentas.Models.LoginViewModel
+@{
+    Layout = null;
+    var errorGeneral = ViewData.ModelState[string.Empty]?.Errors.FirstOrDefault()?.ErrorMessage;
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar sesión - SistemaVentas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.3/pulse/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="login-page">
+    <main class="login-wrap">
+        <div class="toldo" aria-hidden="true"></div>
+
+        <section class="login-card">
+            <div class="login-brand">
+                <i class="bi bi-shop" aria-hidden="true"></i>
+                <h1>SistemaVentas</h1>
+            </div>
+            <p class="login-sub">Inicia sesión para registrar ventas.</p>
+
+            @if (!string.IsNullOrEmpty(errorGeneral))
+            {
+                <div class="alert alert-danger d-flex align-items-center gap-2" role="alert">
+                    <i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i>
+                    <span>@errorGeneral</span>
+                </div>
+            }
+
+            <form asp-controller="Account" asp-action="Login" method="post" novalidate>
+                <input type="hidden" asp-for="ReturnUrl" />
+
+                <div class="mb-3">
+                    <label asp-for="NombreUsuario" class="form-label"></label>
+                    <input asp-for="NombreUsuario" class="form-control" autocomplete="username" autofocus />
+                    <span asp-validation-for="NombreUsuario" class="text-danger small fw-bold"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label"></label>
+                    <div class="campo-password">
+                        <input asp-for="Password" class="form-control" autocomplete="current-password" />
+                        <button type="button" class="ver-password" id="verPassword" aria-label="Mostrar contraseña">
+                            <i class="bi bi-eye" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger small fw-bold"></span>
+                </div>
+
+                <div class="form-check mb-4">
+                    <input asp-for="Recordarme" class="form-check-input" />
+                    <label asp-for="Recordarme" class="form-check-label"></label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg w-100">Entrar</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('verPassword').addEventListener('click', function () {
+            var input = document.getElementById('Password');
+            var oculto = input.type === 'password';
+            input.type = oculto ? 'text' : 'password';
+            this.setAttribute('aria-label', oculto ? 'Ocultar contraseña' : 'Mostrar contraseña');
+            this.firstElementChild.className = oculto ? 'bi bi-eye-slash' : 'bi bi-eye';
+        });
+    </script>
+</body>
+</html>
